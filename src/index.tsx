@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import reportWebVitals from './reportWebVitals';
 import AminoAcidVisualizer from './App';
+import './index.css';
 
 const darkTheme = createTheme({
   palette: {

@@ -29,14 +29,14 @@ const AminoAcidVisualizer = () => {
   const handleCopy = () => {
     const selection = window.getSelection();
     if (selection && selection.toString().trim() !== '') {
-      navigator.clipboard.writeText(selection.toString());
+      navigator.clipboard.writeText(selection.toString().replace(/\s/g,''));
       setShowNotification(true);
       setTimeout(() => setShowNotification(false), 1000);
     }
   };
 
   return (
-    <Box sx={{ padding: 3, maxWidth: 1200, margin: '0 auto' }}>
+    <Box sx={{ padding: 10, maxWidth: 1200, margin: '0 auto' }}>
       <Typography variant="h4" gutterBottom>
         Визуализация выравнивания аминокислотных последовательностей
       </Typography>
@@ -60,6 +60,7 @@ const AminoAcidVisualizer = () => {
           error={!!errors.sequence1}
           helperText={errors.sequence1?.message}
           InputProps={{
+            onMouseUp: handleCopy,
             style: { fontFamily: 'monospace' },
           }}
         />
@@ -73,7 +74,7 @@ const AminoAcidVisualizer = () => {
             required: 'Обязательное поле',
             pattern: {
               value: /^[ARNDCQEGHILKMFPSTWYV-]+$/i,
-              message: 'Допустимы только латинские буквы аминокислот и символ -',
+              message: 'Допустимы только латинские буквы аминокислот A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V и символ -',
             },
             validate: (val) =>
               val.length === watch('sequence1')?.length ||
@@ -82,6 +83,7 @@ const AminoAcidVisualizer = () => {
           error={!!errors.sequence2}
           helperText={errors.sequence2?.message}
           InputProps={{
+            onMouseUp: handleCopy,
             style: { fontFamily: 'monospace' },
           }}
         />
