@@ -40,7 +40,7 @@
 
 ## Деплой
 
-Приложение доступно по адресу:  
+Приложение доступно по адресу:
 [https://abayreushenov.github.io/biocode/](https://abayreushenov.github.io/biocode/)
 
 ## Установка и запуск
@@ -49,3 +49,23 @@
 ```bash
 git clone https://github.com/abayreushenov/biocode.git
 cd biocode
+```
+
+2. Установить зависимости:
+```bash
+npm install
+```
+
+3. Запустить приложение:
+```bash
+npm start
+```
+
+4. Для сборки production-версии:
+```bash
+npm run build
+```
+
+## Лицензия
+
+Этот проект распространяется под лицензией MIT.

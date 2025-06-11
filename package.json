@@ -2,6 +2,7 @@
   "name": "biocode",
   "homepage": "https://abayreushenov.github.io/biocode",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
