@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Приложение для визуализации выравнивания аминокислотных последовательностей
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue)](https://abayreushenov.github.io/biocode/)
 
-## Available Scripts
+## Описание
 
-In the project directory, you can run:
+В области вычислительной биологии и биоинформатики одним из важнейших методов анализа белковых последовательностей является их выравнивание. Это позволяет определить сходство и различия между множеством последовательностей, исследовать функцию белков и их связи с другими белками.
 
-### `npm start`
+Вот так может выглядеть аминокислотная последовательность (например, гемоглобин из мангуста) в буквенном представлении:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`VLSPADKTNIKASWEKIGSHGGEYGAEALERTFLCFPTTKTYFPHFDLSHGSAQVKAHGKKVADALTNAVGHLDDLPGALSALSDLHAYKLRVDPVNFKLLSHCLLVTLASHHPAEFT`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+А вот её же представление в 3D: [https://www.rcsb.org/3d-view/4YU3/1](https://www.rcsb.org/3d-view/4YU3/1)
 
-### `npm test`
+Каждая "буква" — это аминокислота, обладающая своими физическими и биологическими свойствами, которые влияют на структуру и функцию белка.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Основные компоненты приложения
 
-### `npm run build`
+### Валидация ввода аминокислотных последовательностей
+- Данные могут содержать только латинские буквы аминокислот (A, R, N, D, C, E, Q, G, H, I, L, K, M, F, P, S, T, W, Y, V) и символ `-`
+- Проверка одинаковой длины последовательностей
+- Обязательные поля для ввода
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Визуализация выравнивания
+- Цветовая схема для различных аминокислот
+- Подсветка различий между последовательностями
+- Адаптивный дизайн для разных размеров экрана
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Дополнительные функции
+- Копирование выделенных фрагментов в буфер обмена
+- Поддержка встроенного поиска (Ctrl+F)
+- Уведомления о действиях пользователя
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Технологии
 
-### `npm run eject`
+- **React** с **TypeScript**
+- **Material UI** для компонентов интерфейса
+- **React Hook Form** для валидации форм
+- **GitHub Pages** для хостинга
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Деплой
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Приложение доступно по адресу:  
+[https://abayreushenov.github.io/biocode/](https://abayreushenov.github.io/biocode/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Установка и запуск
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Клонировать репозиторий:
+```bash
+git clone https://github.com/abayreushenov/biocode.git
+cd biocode
